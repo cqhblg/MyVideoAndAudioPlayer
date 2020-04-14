@@ -38,8 +38,9 @@ include rules.ninja
 
 build cmake_object_order_depends_target_MyVideoAndAudioPlayer: phony || CMakeFiles\MyVideoAndAudioPlayer.dir
 
-build CMakeFiles\MyVideoAndAudioPlayer.dir\MyVideoAndAudioPlayer.cpp.obj: CXX_COMPILER__MyVideoAndAudioPlayer ..\..\..\MyVideoAndAudioPlayer.cpp || cmake_object_order_depends_target_MyVideoAndAudioPlayer
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+build CMakeFiles\MyVideoAndAudioPlayer.dir\main.cpp.obj: CXX_COMPILER__MyVideoAndAudioPlayer ..\..\..\main.cpp || cmake_object_order_depends_target_MyVideoAndAudioPlayer
+  FLAGS = -D__STDC_CONSTANT_MACROS /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\..\include
   OBJECT_DIR = CMakeFiles\MyVideoAndAudioPlayer.dir
   OBJECT_FILE_DIR = CMakeFiles\MyVideoAndAudioPlayer.dir
   TARGET_COMPILE_PDB = CMakeFiles\MyVideoAndAudioPlayer.dir\
@@ -53,10 +54,10 @@ build CMakeFiles\MyVideoAndAudioPlayer.dir\MyVideoAndAudioPlayer.cpp.obj: CXX_CO
 #############################################
 # Link the executable MyVideoAndAudioPlayer.exe
 
-build MyVideoAndAudioPlayer.exe: CXX_EXECUTABLE_LINKER__MyVideoAndAudioPlayer CMakeFiles\MyVideoAndAudioPlayer.dir\MyVideoAndAudioPlayer.cpp.obj
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+build MyVideoAndAudioPlayer.exe: CXX_EXECUTABLE_LINKER__MyVideoAndAudioPlayer CMakeFiles\MyVideoAndAudioPlayer.dir\main.cpp.obj | ..\..\..\lib\avcodec.lib ..\..\..\lib\avformat.lib ..\..\..\lib\avutil.lib ..\..\..\lib\avdevice.lib ..\..\..\lib\avfilter.lib ..\..\..\lib\postproc.lib ..\..\..\lib\swresample.lib ..\..\..\lib\swscale.lib ..\..\..\lib\SDL2.lib
+  FLAGS = -D__STDC_CONSTANT_MACROS /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = ..\..\..\lib\avcodec.lib ..\..\..\lib\avformat.lib ..\..\..\lib\avutil.lib ..\..\..\lib\avdevice.lib ..\..\..\lib\avfilter.lib ..\..\..\lib\postproc.lib ..\..\..\lib\swresample.lib ..\..\..\lib\swscale.lib ..\..\..\lib\SDL2.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\MyVideoAndAudioPlayer.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
